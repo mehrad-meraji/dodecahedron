@@ -1,12 +1,12 @@
 import { Box, Flex } from "@chakra-ui/react";
 
 import { useAuth } from "@redwoodjs/auth";
+
 import { PersonIcon } from "src/icons/person";
 
 const TopHeader = () => {
   const { currentUser } = useAuth();
 
-  console.log(currentUser);
   return (
     <Flex
       h={6}

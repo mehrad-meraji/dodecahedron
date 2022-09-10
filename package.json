@@ -26,6 +26,7 @@
   "packageManager": "yarn@3.2.1",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.9",
-    "@clerk/themes": "^1.2.7"
+    "@clerk/themes": "^1.2.7",
+    "classnames": "^2.3.1"
   }
 }

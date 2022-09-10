@@ -6,11 +6,12 @@
 //
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Router, Route, Set } from "@redwoodjs/router";
 
-import MarketingLayout from 'src/layouts/MarketingLayout/MarketingLayout'
-import WorkspaceLayout from 'src/layouts/WorkspaceLayout/WorkspaceLayout'
 import AuthenticationLayout from "src/layouts/AuthenticationLayout/AuthenticationLayout";
+import MarketingLayout from "src/layouts/MarketingLayout/MarketingLayout";
+import ProjectsLayout from "src/layouts/ProjectsLayout";
+import WorkspaceLayout from "src/layouts/WorkspaceLayout/WorkspaceLayout";
 
 const Routes = () => {
   return (
@@ -27,9 +28,14 @@ const Routes = () => {
         <Route path="/workspace" page={WorkspacePage} name="workspace" />
         <Route path="/workspace/task-manager" page={TaskManagerPage} name="taskManager" />
         <Route path="/workspace/settings" page={SettingsPage} name="settings" />
+        <Set wrap={ProjectsLayout}>
+          <Route path="/workspace/projects/{id:Int}/edit" page={ProjectEditProjectPage} name="editProject" />
+          <Route path="/workspace/projects/{id:Int}" page={ProjectProjectPage} name="project" />
+          <Route path="/workspace/projects" page={ProjectProjectsPage} name="projects" />
+        </Set>
       </Set>
     </Router>
-  )
-}
+  );
+};
 
-export default Routes
+export default Routes;
