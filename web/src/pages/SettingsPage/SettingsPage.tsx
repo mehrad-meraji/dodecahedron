@@ -1,21 +1,25 @@
-import { Link, routes } from '@redwoodjs/router'
-import { MetaTags } from '@redwoodjs/web'
+import { ReactNode } from "react";
 
-const SettingsPage = () => {
+import { Link, routes } from "@redwoodjs/router";
+
+import GeneralWorkspaceLayout from "src/components/GeneralWorkspaceLayout/GeneralWorkspaceLayout";
+
+type SettingsPageProps = {
+  children: ReactNode;
+};
+
+const SettingsPage = ({ children }: SettingsPageProps) => {
   return (
-    <>
-      <MetaTags title="Settings" description="Settings page" />
+    <GeneralWorkspaceLayout
+      header={
+        <h1 className="ml-2 text-base font-semibold leading-none text-ice-400">
+          <Link to={routes.settings()}>Settings</Link>
+        </h1>
+      }
+    >
+      {children}
+    </GeneralWorkspaceLayout>
+  );
+};
 
-      <h1>SettingsPage</h1>
-      <p>
-        Find me in <code>./web/src/pages/SettingsPage/SettingsPage.tsx</code>
-      </p>
-      <p>
-        My default route is named <code>settings</code>, link to me with `
-        <Link to={routes.settings()}>Settings</Link>`
-      </p>
-    </>
-  )
-}
-
-export default SettingsPage
+export default SettingsPage;

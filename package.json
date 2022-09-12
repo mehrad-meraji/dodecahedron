@@ -7,6 +7,9 @@
       "packages/*"
     ]
   },
+  "scripts": {
+    "dev": "yarn rw dev"
+  },
   "devDependencies": {
     "@chakra-ui/theme-tools": "^2.0.11",
     "@redwoodjs/core": "2.2.3",

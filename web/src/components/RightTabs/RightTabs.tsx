@@ -1,37 +1,34 @@
-import { Box, Flex } from '@chakra-ui/react'
-
-import { Link, routes } from '@redwoodjs/router'
+import { NavLink, routes } from "@redwoodjs/router";
 
 const RightTabs = () => {
   return (
-    <Flex
-      direction="column"
-      justify="space-between"
-      w={6}
-      h={'100%'}
-      borderLeft={'1px'}
-      borderLeftColor={'ice.700'}
-    >
-      <Box />
-      <Box as={Link} to={routes.settings()}>
-        <Flex
-          whiteSpace="nowrap"
-          fontSize={10}
-          textTransform={'uppercase'}
-          alignItems={'center'}
-          justify={'center'}
-          px={2}
-          w={'100%'}
-          color={'ice.400'}
+    <div className={"flex flex-col justify-between w-6 h-full border-l border-ice-700"}>
+      <div>
+        <div
+          className={
+            "flex w-full items-center justify-center whitespace-nowrap p-2 text-3xs uppercase text-ice-400"
+          }
           style={{
-            writingMode: 'vertical-lr',
+            writingMode: "vertical-lr",
+          }}
+        >
+          {"Todo List"}
+        </div>
+      </div>
+      <NavLink activeClassName={"bg-ice-700"} to={routes.settings()}>
+        <div
+          className={
+            "flex w-full items-center justify-center whitespace-nowrap p-2 text-3xs uppercase text-ice-400"
+          }
+          style={{
+            writingMode: "vertical-lr",
           }}
         >
           Settings
-        </Flex>
-      </Box>
-    </Flex>
-  )
-}
+        </div>
+      </NavLink>
+    </div>
+  );
+};
 
-export default RightTabs
+export default RightTabs;

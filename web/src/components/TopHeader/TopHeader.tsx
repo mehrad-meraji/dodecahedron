@@ -1,12 +1,8 @@
 import { Box, Flex } from "@chakra-ui/react";
 
-import { useAuth } from "@redwoodjs/auth";
-
-import { PersonIcon } from "src/icons/person";
+import UserButton from "src/components/UserButton/UserButton";
 
 const TopHeader = () => {
-  const { currentUser } = useAuth();
-
   return (
     <Flex
       h={6}
@@ -20,10 +16,7 @@ const TopHeader = () => {
       <Box as={"h2"} textTransform={"uppercase"} color={"ice.400"}>
         PadLinker
       </Box>
-      <Flex textTransform={"uppercase"} color={"ice.400"} gap={1} alignItems={'center'}>
-        <PersonIcon h={2} w={2} color={"ice.400"} />
-        {currentUser.emailAddresses[0].emailAddress}
-      </Flex>
+      <UserButton />
     </Flex>
   );
 };

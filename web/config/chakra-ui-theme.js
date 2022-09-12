@@ -3,6 +3,7 @@ import { mode } from "@chakra-ui/theme-tools";
 
 import { Button } from "./chakra-theme-overides/button.component";
 import { Input } from "./chakra-theme-overides/input.component";
+import { Menu } from "./chakra-theme-overides/menu.component";
 import { Modal } from "./chakra-theme-overides/modal.component";
 import colors from "./colors";
 
@@ -15,6 +16,7 @@ const components = {
   Button,
   Modal,
   Input,
+  Menu,
 };
 
 const fontSizes = {

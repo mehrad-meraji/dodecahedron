@@ -1,6 +1,8 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Flex, VisuallyHidden } from "@chakra-ui/react";
 
-import items from './feature-nav'
+import { NavLink } from "@redwoodjs/router";
+
+import items from "./feature-nav";
 
 const SideNav = () => {
   return (
@@ -11,22 +13,24 @@ const SideNav = () => {
       borderRight="1px"
       borderRightColor="ice.700"
       gap="1"
-      direction={'column'}
+      direction={"column"}
+      alignItems={"center"}
     >
       {items.map((item) => (
-        <Flex
-          align="center"
-          justify="center"
+        <NavLink
+          className={
+            "flex h-8 w-8 items-center justify-center rounded border border-transparent hover:border-ice-700"
+          }
           key={item.name}
-          w={8}
-          h={8}
-          borderRadius="1"
+          activeClassName={"bg-ice-800"}
+          to={item.to}
         >
           <item.icon w={5} h={5} />
-        </Flex>
+          <VisuallyHidden>{item.name}</VisuallyHidden>
+        </NavLink>
       ))}
     </Flex>
-  )
-}
+  );
+};
 
-export default SideNav
+export default SideNav;

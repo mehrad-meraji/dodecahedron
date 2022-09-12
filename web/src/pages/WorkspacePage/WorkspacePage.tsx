@@ -1,21 +1,30 @@
-import { Link, routes } from '@redwoodjs/router'
-import { MetaTags } from '@redwoodjs/web'
+import { ReactNode } from "react";
 
-const WorkspacePage = () => {
+import { Link, routes } from "@redwoodjs/router";
+import { MetaTags } from "@redwoodjs/web";
+
+import GeneralWorkspaceLayout from "src/components/GeneralWorkspaceLayout/GeneralWorkspaceLayout";
+
+type WorkspacePageProps = {
+  children: ReactNode;
+};
+
+const WorkspacePage = ({ children }: WorkspacePageProps) => {
   return (
     <>
-      <MetaTags title="Workspace" description="Workspace page" />
+      <MetaTags title="Dashboard" description="Dashboard page" />
 
-      <h1>WorkspacePage</h1>
-      <p>
-        Find me in <code>./web/src/pages/WorkspacePage/WorkspacePage.tsx</code>
-      </p>
-      <p>
-        My default route is named <code>workspace</code>, link to me with `
-        <Link to={routes.workspace()}>Workspace</Link>`
-      </p>
+      <GeneralWorkspaceLayout
+        header={
+          <h1 className="ml-2 text-base font-semibold leading-none text-ice-400">
+            <Link to={routes.workspace()}>Dashboard</Link>
+          </h1>
+        }
+      >
+        {children}
+      </GeneralWorkspaceLayout>
     </>
-  )
-}
+  );
+};
 
-export default WorkspacePage
+export default WorkspacePage;

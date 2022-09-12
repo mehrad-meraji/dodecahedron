@@ -76,26 +76,43 @@ const ProjectsList = ({ projects }) => {
   };
 
   return (
-    <div className="rw-segment rw-table-wrapper-responsive">
-      <table className="rw-table">
+    <section className="p-2">
+      <table className="w-full border-separate border-spacing-y-2">
         <thead>
           <tr>
-            <th>Id</th>
-            <th>User id</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>&nbsp;</th>
+            <th className="border-b border-ice-800 px-2 text-left text-xs font-normal text-ice-400" />
+            <th className="border-b border-ice-800 px-2 text-left text-xs font-normal text-ice-400">
+              Name
+            </th>
+            <th className="border-b border-ice-800 px-2 text-left text-xs font-normal text-ice-400">
+              Description
+            </th>
+            <th className="border-b border-ice-800 px-2 text-left text-xs font-normal text-ice-400">
+              &nbsp;
+            </th>
           </tr>
         </thead>
         <tbody>
           {projects.map((project) => (
-            <tr key={project.id}>
-              <td>{truncate(project.id)}</td>
-              <td>{truncate(project.userID)}</td>
-              <td>{truncate(project.name)}</td>
-              <td>{truncate(project.description)}</td>
-              <td>
-                <nav className="rw-table-actions">
+            <tr key={project.id} className={"bg-ice-800"}>
+              <td className={"h-10 rounded-l bg-ice-800 p-2 text-xs"}>
+                <div className="text-2xs flex h-6 w-6 flex-col overflow-hidden rounded bg-ice-500">
+                  <span
+                    className={"grow text-center font-semibold text-royal-200"}
+                  >
+                    DO
+                  </span>
+                  <span className={"h-2 w-full shrink-0 bg-royal-400"} />
+                </div>
+              </td>
+              <td className={"h-10 bg-ice-800 p-2 text-xs font-semibold"}>
+                {truncate(project.name)}
+              </td>
+              <td className={"h-10 bg-ice-800 p-2 text-xs"}>
+                {project.description ? truncate(project.description) : "-"}
+              </td>
+              <td className={"rounded-r bg-ice-800 p-2 text-right text-xs"}>
+                <nav className="rw-table-actions flex justify-end gap-1">
                   <Link
                     to={routes.project({ id: project.id })}
                     title={"Show project " + project.id + " detail"}
@@ -124,7 +141,7 @@ const ProjectsList = ({ projects }) => {
           ))}
         </tbody>
       </table>
-    </div>
+    </section>
   );
 };
 

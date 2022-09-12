@@ -1,0 +1,7 @@
+import { Icon } from "@chakra-ui/icons";
+
+export const DashboardIcon = (props) => (
+  <Icon viewBox="0 0 14 14" {...props}>
+    <defs><clipPath id="dashboard-icon-a"><path d="M5.362 0v.745h.744c.372 0 .708.25.863.632a.497.497 0 0 1-.033.417.386.386 0 0 1-.33.206H.392a.382.382 0 0 1-.33-.206.497.497 0 0 1-.03-.417C.184.992.523.745.895.745h.744V0h3.723Z"/></clipPath><clipPath id="dashboard-icon-b"><path d="M1.51 2.4c.27 0 .49.174.49.387v2.826C2 5.826 1.78 6 1.51 6H.49C.22 6 0 5.826 0 5.613V2.787C0 2.574.216 2.4.49 2.4h1.02Zm3-2.4c.27 0 .49.186.49.416v5.168c0 .23-.22.416-.49.416H3.49C3.22 6 3 5.814 3 5.584V.416C3 .186 3.216 0 3.49 0h1.02Zm3 2.4c.27 0 .49.174.49.387v2.826C8 5.826 7.78 6 7.51 6H6.49C6.22 6 6 5.826 6 5.613V2.787c0-.213.22-.387.49-.387h1.02Zm3-1.2c.27 0 .49.174.49.389V5.61c0 .215-.22.389-.49.389H9.49C9.22 6 9 5.826 9 5.611V1.59c0-.215.22-.389.49-.389h1.02Z"/></clipPath><clipPath id="dashboard-icon-c"><path d="M13.267 0c.402 0 .73.38.733.85v10.297c0 .47-.328.853-.73.853H.73c-.405 0-.73-.383-.73-.853V.85C0 .38.325 0 .73 0ZM7 10.068a.752.752 0 0 0-.75.75c0 .412.338.75.75.75s.75-.338.75-.75a.752.752 0 0 0-.75-.75ZM13.267.68H.727C.647.68.582.757.582.85v8.432h12.83V.85c0-.093-.065-.17-.145-.17Z"/></clipPath></defs><g clipPath="url(#dashboard-icon-a)" transform="translate(3.5 12)"><path fill="#A8A3A0" d="M0 0h7v2H0V0z"/></g><g clipPath="url(#dashboard-icon-b)" transform="translate(2 2)"><path fill="#A8A3A0" d="M0 0h11v6H0V0z"/></g><g clipPath="url(#dashboard-icon-c)"><path fill="#A8A3A0" d="M0 0h14v12H0V0z"/></g>
+  </Icon>
+)

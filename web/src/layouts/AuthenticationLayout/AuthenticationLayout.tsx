@@ -7,9 +7,9 @@ const AuthenticationLayout = ({ children }: AuthenticationLayoutProps) => {
     <section className={"flex h-full flex-col"}>
       <section className={"grid grow grid-cols-1 lg:grid-cols-2"}>
         <section
-          className={"bg-cover bg-center bg-no-repeat"}
+          className={"bg-cover bg-top bg-no-repeat"}
           style={{
-            backgroundImage: "url(/images/auth-background.webp)",
+            backgroundImage: "url(/images/auth-background.png)",
           }}
         ></section>
         <section
